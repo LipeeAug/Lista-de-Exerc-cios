@@ -1,0 +1,824 @@
+# Exercício 1
+A = [1, 0, 5, -2, -5, 7]
+
+soma = A[1] + A[0] + A[5]
+print(f"soma de A[1], A[0], A[5] = {soma}")
+
+A[4] = 100
+print("Valores do vetor A:")
+for valor in A:
+    print(valor)
+_________________________________________________________________________________________
+# Exercício 2
+valores = []
+
+print("Digite 6 valores inteiros:")
+for i in range(6):
+    valor = int(input(f"Valor {i + 1}: "))
+    valores.append(valor)
+
+print("Valores inseridos:")
+for valor in valores:
+    print(valor)
+_________________________________________________________________________________________
+  # Exercício 3
+tamanho = 10
+vetororiginal = []
+vetorquadrado = []
+
+print("Digite 10 números reais:")
+for i in range(tamanho):
+    numero = float(input(f"Número {i + 1}: "))
+    vetororiginal.append(numero)
+    vetorquadrado.append(numero ** 2)
+
+print("\nconjunto original:")
+print(vetororiginal)
+
+print("\nconjunto dos quadrados:")
+print(vetorquadrado)
+_________________________________________________________________________________________
+  # Exercício 4
+tamanho = 8
+vetor = []
+
+print("Digite os valores do vetor de 8 posições:")
+for i in range(tamanho):
+    valor = int(input(f"Posição {i}: "))
+    vetor.append(valor)
+
+X = int(input("Digite os valores de X (posições no vetor): "))
+Y = int(input("Digite os valores de Y (posições no vetor): "))
+
+if 0 <= X < tamanho and 0 <= Y < tamanho:
+    soma = vetor[X] + vetor[Y]
+    print(f"A soma dos valores nas posições {X} e {Y} é: {soma}")
+else:
+    print("As posições X e Y estão fora do intervalo válido.")
+_________________________________________________________________________________________
+# Exercício 5
+tamanho = 10
+vetor = []
+
+print("Digite os valores do vetor de 10 posições:")
+for i in range(tamanho):
+    valor = int(input(f"Posição {i + 1}: "))
+    vetor.append(valor)
+
+contadorpares = sum(1 for num in vetor if num % 2 == 0)
+
+print(f"O vetor possui {contadorpares} valores pares.")
+_________________________________________________________________________________________
+  # Exercício 6
+tamanho = 10
+vetor = []
+
+print("Digite os valores do vetor de 10 posições:")
+for i in range(tamanho):
+    valor = int(input(f"Posição {i + 1}: "))
+    vetor.append(valor)
+
+maior = max(vetor)
+menor = min(vetor)
+
+print(f"O maior elemento do vetor é: {maior}")
+print(f"O menor elemento do vetor é: {menor}")
+_________________________________________________________________________________________
+# Exercício 7
+tamanho = 10
+vetor = []
+
+print("Digite 10 números inteiros:")
+for i in range(tamanho):
+    numero = int(input(f"Número {i + 1}: "))
+    vetor.append(numero)
+
+maior = max(vetor)
+posicao = vetor.index(maior)
+
+print("Vetor inserido:")
+print(vetor)
+print(f"O maior elemento do vetor é: {maior}")
+print(f"Ele se encontra na posição: {posicao}")
+_________________________________________________________________________________________
+# Exercício 8
+def lervalores():
+    valores = []
+    for i in range(6):
+        valor = int(input(f"Digite o {i + 1}º valor inteiro: "))
+        valores.append(valor)
+    return valores
+
+def mostrarinverso(valores):
+    print("valores na ordem inversa:")
+    for valor in reversed(valores):
+        print(valor)
+
+valores = lervalores()
+mostrarinverso(valores)
+_________________________________________________________________________________________
+# Exercício 9
+def ler_valores_pares():
+    valores_pares = []
+    while len(valores_pares) < 6:
+        valor = int(input("Digite um valor inteiro par: "))
+        if valor % 2 == 0:
+            valores_pares.append(valor)
+        else:
+            print("O valor digitado não é par. Tente novamente.")
+    return valores_pares
+
+def mostrar_ordem_inversa(valores):
+    print("Valores na ordem inversa:")
+    for valor in reversed(valores):
+        print(valor)
+
+print("Digite 6 valores inteiros pares:")
+valores = ler_valores_pares()
+mostrar_ordem_inversa(valores)
+_________________________________________________________________________________________
+# Exercício 10
+def ler_notas(quantidade_alunos):
+    notas = []
+    for i in range(quantidade_alunos):
+        nota = float(input(f"Digite a nota do aluno {i + 1}: "))
+        notas.append(nota)
+    return notas
+
+def calcular_media_geral(notas):
+    soma = sum(notas)
+    return soma / len(notas)
+
+quantidade_alunos = 15
+
+print(f"Digite as notas dos {quantidade_alunos} alunos:")
+notas = ler_notas(quantidade_alunos)
+
+media_geral = calcular_media_geral(notas)
+
+print(f"A média geral das notas é: {media_geral}")
+_________________________________________________________________________________________
+# Exercício 11
+size = 10
+numbers = []
+
+print("Digite 10 numeros reais:")
+for i in range(size):
+    number = float(input(f"Number {i + 1}: "))
+    numbers.append(number)
+
+negativeCount = sum(1 for num in numbers if num < 0)
+positiveSum = sum(num for num in numbers if num >= 0)
+
+print(f"Quantidade de numeros negativos: {negativeCount}")
+print(f"Soma dos numeros positivos: {positiveSum}")
+_________________________________________________________________________________________
+# Exercício 12
+size = 5
+values = []
+
+print("Escreva 5 números:")
+for i in range(size):
+    number = float(input(f"Número {i + 1}: "))
+    values.append(number)
+
+sum_values = sum(values)
+maxVal = max(values)
+minVal = min(values)
+average = sum_values / size
+
+print("Números:")
+print(values)
+print(f"Valor máximo: {maxVal}")
+print(f"Valor mínimo: {minVal}")
+print(f"Média: {average}")
+_________________________________________________________________________________________
+# Exercício 13
+tamanho = 5
+num = []
+
+print("Digite 5 números reais:")
+for i in range(tamanho):
+    numero = float(input(f"Número {i + 1}: "))
+    num.append(numero)
+
+maior = max(num)
+menor = min(num)
+
+print("conjunto original:")
+print(num)
+print(f"Maior número: {maior}")
+print(f"Menor número: {menor}")
+_________________________________________________________________________________________
+  # Exercício 14
+size = 10
+values = []
+uniqueValues = set()
+duplicates = []
+
+print("Insira 10 valores:")
+for i in range(size):
+    value = int(input(f"Valor {i + 1}: "))
+    if value in uniqueValues:
+        duplicates.append(value)
+    else:
+        uniqueValues.add(value)
+
+if not duplicates:
+    print("Nenhum valor duplicado encontrado.")
+else:
+    print(f"Valores duplicados: {duplicates}")
+_________________________________________________________________________________________
+  # Exercício 15
+size = 20
+values = []
+uniqueValues = set()
+
+print("Insira 20 valores:")
+for i in range(size):
+    value = int(input(f"Valor {i + 1}: "))
+    uniqueValues.add(value)
+
+print("Valores únicos:", uniqueValues)
+_________________________________________________________________________________________
+  # Exercício 16
+size = 5
+values = []
+
+print("Insira 5 numeros reais:")
+for i in range(size):
+    number = float(input(f"Valor {i + 1}: "))
+    values.append(number)
+
+code = int(input("Digite um código (0 para sair, 1 para exibir em ordem direta, 2 para exibir em ordem inversa) "))
+
+if code == 0:
+    print("Exiting program.")
+elif code == 1:
+    print("Valores em ordem:", values)
+elif code == 2:
+    print("Valores em ordem reversa:", values[::-1])
+else:
+    print("Invalido.")
+_________________________________________________________________________________________
+  # Exercício 17
+tamanho = 10
+num = []
+
+print("Digite 10 números reais:")
+for i in range(tamanho):
+    numero = float(input(f"Número {i + 1}: "))
+    if numero < 0:
+        numero = 0
+    num.append(numero)
+
+print("conjunto com os negativos transformados em 0:")
+print(num)
+_________________________________________________________________________________________
+ # Exercício 18
+def main():
+    tamanho = 10
+    vetor = []
+    contador = 0
+
+    print("Digite 10 números inteiros separados por espaço: ")
+    entrada = input().split()
+    vetor = list(map(int, entrada))
+
+    x = int(input("Digite o número x para verificar os múltiplos: "))
+
+    print(f"Os múltiplos de {x} no vetor são: ", end="")
+    for i in range(tamanho):
+        if vetor[i] % x == 0:
+            print(vetor[i], end=" ")
+            contador += 1
+
+    if contador == 0:
+        print(f"Nenhum múltiplo de {x} encontrado.")
+    print()
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 19
+def main():
+    tamanho = 50
+    vetor = []
+
+    for i in range(tamanho):
+        vetor.append((i + 5 * i) % (i + 1))
+
+    print("Vetor gerado com a fórmula (i + 5 * i) % (i + 1):")
+    print(vetor)
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 20
+def main():
+    tamanho = 10
+    vetor1 = []
+    vetor2 = []
+
+    print("Digite 10 números inteiros no intervalo [0, 50]:")
+    for i in range(tamanho):
+        num = int(input(f"Digite o {i+1}º número: "))
+        while num < 0 or num > 50:
+            num = int(input(f"Digite o {i+1}º número (entre 0 e 50): "))
+        vetor1.append(num)
+
+    vetor2 = [num for num in vetor1 if num % 2 != 0]
+
+    print("\nVetor 1 (todos os números):")
+    for i in range(tamanho):
+        print(vetor1[i], end=" ")
+        if (i + 1) % 2 == 0:
+            print()
+
+    print("\nVetor 2 (apenas números ímpares):")
+    for i in range(len(vetor2)):
+        print(vetor2[i], end=" ")
+        if (i + 1) % 2 == 0:
+            print()
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 21
+def main():
+    tamanho = 10
+    A = []
+    B = []
+    C = []
+
+    print("Digite os elementos do vetor A (10 números inteiros):")
+    for i in range(tamanho):
+        A.append(int(input(f"Digite o {i+1}º elemento: ")))
+
+    print("\nDigite os elementos do vetor B (10 números inteiros):")
+    for i in range(tamanho):
+        B.append(int(input(f"Digite o {i+1}º elemento: ")))
+
+    C = [A[i] - B[i] for i in range(tamanho)]
+
+    print("\nVetor C (C = A - B):")
+    print(C)
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 22
+def main():
+    tamanho = 10
+    vetor1 = []
+    vetor2 = []
+    vetorCombinado = []
+
+    print("Digite os elementos do primeiro vetor (10 números inteiros):")
+    for i in range(tamanho):
+        vetor1.append(int(input(f"Digite o {i+1}º elemento: ")))
+
+    print("\nDigite os elementos do segundo vetor (10 números inteiros):")
+    for i in range(tamanho):
+        vetor2.append(int(input(f"Digite o {i+1}º elemento: ")))
+
+    for i in range(tamanho):
+        vetorCombinado.append(vetor1[i])
+        vetorCombinado.append(vetor2[i])
+
+    print("\nVetor combinado:")
+    print(vetorCombinado)
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 23
+def main():
+    tamanho = 5
+    vetorX = []
+    vetorY = []
+
+    print(f"Digite os {tamanho} elementos do vetor X:")
+    for i in range(tamanho):
+        vetorX.append(float(input(f"Elemento {i+1}: ")))
+
+    print(f"Digite os {tamanho} elementos do vetor Y:")
+    for i in range(tamanho):
+        vetorY.append(float(input(f"Elemento {i+1}: ")))
+
+    produtoEscalar = sum(vetorX[i] * vetorY[i] for i in range(tamanho))
+
+    print("\nVetor X:", vetorX)
+    print("Vetor Y:", vetorY)
+    print("Produto escalar:", produtoEscalar)
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 24
+def main():
+    tamanho = 10
+    numeroAluno = []
+    altura = []
+
+    print(f"Digite o número do aluno e altura de {tamanho} alunos:")
+    for i in range(tamanho):
+        numeroAluno.append(int(input(f"Número do aluno {i+1}: ")))
+        altura.append(float(input(f"Altura do aluno {i+1} em metros: ")))
+
+    indiceAlunoMaior = altura.index(max(altura))
+    indiceAlunoMenor = altura.index(min(altura))
+
+    print(f"\nAluno mais alto: {numeroAluno[indiceAlunoMaior]} ({altura[indiceAlunoMaior]} metros)")
+    print(f"Aluno mais baixo: {numeroAluno[indiceAlunoMenor]} ({altura[indiceAlunoMenor]} metros)")
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 25
+def main():
+    tamanho = 100
+    valores = []
+    num = 1
+
+    while len(valores) < tamanho:
+        if num % 7 != 0 and num % 10 != 7:
+            valores.append(num)
+        num += 1
+
+    print("Valores gerados:")
+    print(valores)
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 26
+import math
+
+def main():
+    n = 10
+    v = []
+    soma = 0.0
+
+    print("Digite 10 números:")
+    for i in range(n):
+        v.append(float(input()))
+
+    media = sum(v) / n
+    variancia = sum((x - media) ** 2 for x in v) / n
+    desvioPadrao = math.sqrt(variancia)
+
+    print(f"A média do vetor é: {media}")
+    print(f"O desvio padrão do vetor é: {desvioPadrao}")
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+# Exercício 27
+import math
+
+def ehPrimo(num):
+    if num <= 1:
+        return False
+    if num == 2:
+        return True
+    if num % 2 == 0:
+        return False
+    for i in range(3, math.isqrt(num) + 1, 2):
+        if num % i == 0:
+            return False
+    return True
+
+def main():
+    tamanho = 10
+    numeros = []
+
+    print("Digite 10 números inteiros:")
+    for i in range(tamanho):
+        numeros.append(int(input()))
+
+    print("Números primos e suas posições:")
+    for i in range(tamanho):
+        if ehPrimo(numeros[i]):
+            print(f"Número {numeros[i]} na posição {i}")
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+# Exercício 28
+def main():
+    tamanho = 10
+    v = []
+    v1 = []
+    v2 = []
+
+    print("Digite 10 números inteiros:")
+    for i in range(tamanho):
+        v.append(int(input()))
+
+    for num in v:
+        if num % 2 == 0:
+            v2.append(num)
+        else:
+            v1.append(num)
+
+    print("Elementos utilizados de v1 (ímpares):")
+    print(v1)
+
+    print("\nElementos utilizados de v2 (pares):")
+    print(v2)
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+# Exercício 29
+  def main():
+    tamanho = 6
+    numeros = []
+    pares = []
+    impares = []
+    somaPares = 0
+    quantidadeImpares = 0
+
+    print("Digite 6 números inteiros:")
+    for i in range(tamanho):
+        numeros.append(int(input()))
+
+    for num in numeros:
+        if num % 2 == 0:
+            pares.append(num)
+            somaPares += num
+        else:
+            impares.append(num)
+            quantidadeImpares += 1
+
+    print("Números pares digitados:")
+    print(" ".join(map(str, pares)))
+    print(f"Soma dos números pares digitados: {somaPares}")
+
+    print("Números ímpares digitados:")
+    print(" ".join(map(str, impares)))
+    print(f"Quantidade de números ímpares digitados: {quantidadeImpares}")
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 30
+def main():
+    tamanho = 10
+    vetor1 = []
+    vetor2 = []
+
+    print("Digite 10 números para o primeiro vetor:")
+    for i in range(tamanho):
+        vetor1.append(int(input()))
+
+    print("Digite 10 números para o segundo vetor:")
+    for i in range(tamanho):
+        vetor2.append(int(input()))
+
+    intersecao = set()
+    for num in vetor1:
+        if num in vetor2:
+            intersecao.add(num)
+
+    print("Vetor de interseção:")
+    print(sorted(intersecao))
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 31
+def main():
+    tamanho = 10
+    vetor1 = []
+    vetor2 = []
+
+    print("Digite 10 números para o primeiro vetor:")
+    for i in range(tamanho):
+        vetor1.append(int(input()))
+
+    print("Digite 10 números para o segundo vetor:")
+    for i in range(tamanho):
+        vetor2.append(int(input()))
+
+    uniao = set(vetor1).union(set(vetor2))
+
+    print("Vetor de união:")
+    print(sorted(uniao))
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 32
+def main():
+    tamanho = 5
+    x = []
+    y = []
+
+    print("Digite 5 números para o vetor x:")
+    for i in range(tamanho):
+        x.append(int(input()))
+
+    print("Digite 5 números para o vetor y:")
+    for i in range(tamanho):
+        y.append(int(input()))
+
+    soma = [x[i] + y[i] for i in range(tamanho)]
+    produto = [x[i] * y[i] for i in range(tamanho)]
+    diferenca = [num for num in x if num not in y]
+    intersecao = [num for num in x if num in y]
+    uniao = list(set(x).union(set(y)))
+
+    print("Soma:", soma)
+    print("Produto:", produto)
+    print("Diferença (x - y):", diferenca)
+    print("Interseção:", intersecao)
+    print("União:", sorted(uniao))
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 33
+def main():
+    tamanho = 15
+    vetor = []
+
+    print("Digite 15 números para o vetor (inclua alguns zeros):")
+    for i in range(tamanho):
+        vetor.append(int(input()))
+
+    vetor = [num for num in vetor if num != 0]
+    vetor += [0] * (tamanho - len(vetor))
+
+    print("Vetor compactado:", vetor)
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 34
+def main():
+    tamanho = 10
+    vetor = []
+
+    print("Digite 10 números diferentes:")
+    while len(vetor) < tamanho:
+        numero = int(input("Digite um número: "))
+        if numero not in vetor:
+            vetor.append(numero)
+        else:
+            print("Número já digitado, por favor digite outro número.")
+
+    print("Vetor final:", vetor)
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 35
+def numero_para_vetor(numero):
+    vetor = []
+    while numero > 0:
+        vetor.append(numero % 10)
+        numero //= 10
+    return vetor
+
+def soma_vetores(a, b):
+    soma = []
+    carry = 0
+    max_length = max(len(a), len(b))
+    for i in range(max_length):
+        digito_a = a[i] if i < len(a) else 0
+        digito_b = b[i] if i < len(b) else 0
+        digito_soma = digito_a + digito_b + carry
+        carry = digito_soma // 10
+        soma.append(digito_soma % 10)
+    if carry > 0:
+        soma.append(carry)
+    return soma
+
+def main():
+    a = int(input("Digite o número a (positivo menor que 10000): "))
+    b = int(input("Digite o número b (positivo menor que 10000): "))
+
+    if not (0 <= a < 10000 and 0 <= b < 10000):
+        print("Os números devem ser positivos e menores que 10000.")
+        return
+
+    vetor_a = numero_para_vetor(a)
+    vetor_b = numero_para_vetor(b)
+    vetor_soma = soma_vetores(vetor_a, vetor_b)
+
+    print("Número a em vetor:", vetor_a[::-1])
+    print("Número b em vetor:", vetor_b[::-1])
+    print("Soma em vetor:", vetor_soma[::-1])
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 36
+def main():
+    numeros = []
+
+    print("Digite 10 números reais:")
+    for i in range(10):
+        numeros.append(float(input(f"Número {i + 1}: ")))
+
+    numeros.sort()
+
+    print("Números ordenados:")
+    print(numeros)
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 37
+def merge_vectors(left, right):
+    merged = []
+    i = j = 0
+
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            merged.append(left[i])
+            i += 1
+        else:
+            merged.append(right[j])
+            j += 1
+
+    merged.extend(left[i:])
+    merged.extend(right[j:])
+    
+    return merged
+
+def main():
+    A = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1]
+
+    left = A[:6]
+    right = A[6:]
+    right.reverse()
+
+    sorted_array = merge_vectors(left, right)
+
+    print("Vetor ordenado:", sorted_array)
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 38
+def merge_vectors(left, right):
+    merged = []
+    i = j = 0
+
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            merged.append(left[i])
+            i += 1
+        else:
+            merged.append(right[j])
+            j += 1
+
+    merged.extend(left[i:])
+    merged.extend(right[j:])
+    
+    return merged
+
+def main():
+    A = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1]
+
+    left = A[:6]
+    right = A[6:]
+    right.reverse()
+
+    sorted_array = merge_vectors(left, right)
+
+    print("Vetor ordenado:", sorted_array)
+
+if __name__ == "__main__":
+    main()
+_________________________________________________________________________________________
+  # Exercício 39
+def generate_pascal_triangle(n):
+    triangle = []
+
+    for i in range(n):
+        row = [1] * (i + 1)
+        for j in range(1, i):
+            row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]
+        triangle.append(row)
+
+    return triangle
+
+def print_pascal_triangle(triangle):
+    for row in triangle:
+        for num in row:
+            print(num, end=" ")
+        print()
+
+def main():
+    n = int(input("Digite um número inteiro positivo: "))
+
+    triangle = generate_pascal_triangle(n)
+
+    print_pascal_triangle(triangle)
+
+if __name__ == "__main__":
+    main()
