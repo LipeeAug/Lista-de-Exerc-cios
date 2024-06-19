@@ -1,0 +1,244 @@
+# Exercício 1:
+def exercicio1():
+    numbers = []
+    more_than_10 = 0
+    
+    print("Digite 16 números:")
+    for i in range(16):
+        numbers.append(float(input()))
+    
+    for num in numbers:
+        if num > 10:
+            more_than_10 += 1
+    
+    print(f"Quantidade de números maiores que 10: {more_than_10}")
+
+exercicio1()
+___________________________________________________________________________________________________
+# Exercício 2:
+def exercicio2():
+    matriz = [[0]*5 for _ in range(5)]
+    
+    for i in range(5):
+        for j in range(5):
+            if i == j:
+                matriz[i][j] = 1
+            else:
+                matriz[i][j] = 0
+    
+    print("Matriz 5x5 com 1 na diagonal principal e 0 nos demais elementos:")
+    for linha in matriz:
+        print(' '.join(map(str, linha)))
+
+exercicio2()
+___________________________________________________________________________________________________
+# Exercício 3:
+def exercicio3():
+    rows = 5
+    cols = 5
+    matriz = [[0]*cols for _ in range(rows)]
+    
+    for i in range(rows):
+        for j in range(cols):
+            matriz[i][j] = i * j
+    
+    print("Matriz preenchida com o produto da linha e da coluna de cada elemento:")
+    for linha in matriz:
+        print('\t'.join(map(str, linha)))
+
+exercicio3()
+___________________________________________________________________________________________________
+# Exercício 4:
+def exercicio4():
+    rows = 4
+    cols = 4
+    matriz = [[0]*cols for _ in range(rows)]
+    
+    print("Digite os valores da matriz 4x4:")
+    for i in range(rows):
+        for j in range(cols):
+            matriz[i][j] = int(input(f"Elemento [{i}][{j}]: "))
+    
+    print("\nMatriz 4x4:")
+    for linha in matriz:
+        print('\t'.join(map(str, linha)))
+    
+    maior_valor = matriz[0][0]
+    linha_maior = 0
+    coluna_maior = 0
+    
+    for i in range(rows):
+        for j in range(cols):
+            if matriz[i][j] > maior_valor:
+                maior_valor = matriz[i][j]
+                linha_maior = i
+                coluna_maior = j
+    
+    print(f"\nO maior valor na matriz é: {maior_valor}")
+    print(f"Localizado na linha {linha_maior} e coluna {coluna_maior}")
+
+exercicio4()
+___________________________________________________________________________________________________
+# Exercício 5:
+def exercicio5():
+    rows = 5
+    cols = 5
+    matriz = [[0]*cols for _ in range(rows)]
+    
+    print("Digite os valores da matriz 5x5:")
+    for i in range(rows):
+        for j in range(cols):
+            matriz[i][j] = int(input(f"Elemento [{i}][{j}]: "))
+    
+    X = int(input("\nDigite o valor a ser buscado na matriz: "))
+    
+    encontrado = False
+    linha_X = -1
+    coluna_X = -1
+    
+    for i in range(rows):
+        for j in range(cols):
+            if matriz[i][j] == X:
+                encontrado = True
+                linha_X = i
+                coluna_X = j
+                break
+        if encontrado:
+            break
+    
+    if encontrado:
+        print(f"\nO valor {X} foi encontrado na linha {linha_X} e coluna {coluna_X}.")
+    else:
+        print(f"\nValor {X} não encontrado na matriz.")
+
+exercicio5()
+___________________________________________________________________________________________________
+# Exercício 6:
+def exercicio6():
+    rows = 4
+    cols = 4
+    matriz1 = [[0]*cols for _ in range(rows)]
+    matriz2 = [[0]*cols for _ in range(rows)]
+    matriz_maior = [[0]*cols for _ in range(rows)]
+    
+    print("Digite os valores da primeira matriz 4x4:")
+    for i in range(rows):
+        for j in range(cols):
+            matriz1[i][j] = int(input(f"Matriz1[{i}][{j}]: "))
+    
+    print("\nDigite os valores da segunda matriz 4x4:")
+    for i in range(rows):
+        for j in range(cols):
+            matriz2[i][j] = int(input(f"Matriz2[{i}][{j}]: "))
+    
+    for i in range(rows):
+        for j in range(cols):
+            if matriz1[i][j] > matriz2[i][j]:
+                matriz_maior[i][j] = matriz1[i][j]
+            else:
+                matriz_maior[i][j] = matriz2[i][j]
+    
+    print("\nMatriz resultante com os maiores valores de cada posição:")
+    for linha in matriz_maior:
+        print('\t'.join(map(str, linha)))
+
+exercicio6()
+___________________________________________________________________________________________________
+# Exercício 7:
+def exercicio7():
+    size = 10
+    matriz = [[0]*size for _ in range(size)]
+    
+    for i in range(size):
+        for j in range(size):
+            if i < j:
+                matriz[i][j] = 2 * i + 7 * j
+            elif i == j:
+                matriz[i][j] = 3 * (i ** 2) + 1
+            else:
+                matriz[i][j] = 4 * (i ** 3) + 5 * (j ** 2) + 1
+    
+    print("Matriz 10x10 gerada:")
+    for linha in matriz:
+        print('\t'.join(map(str, linha)))
+
+exercicio7()
+___________________________________________________________________________________________________
+# Exercício 8:
+def exercicio8():
+    size = 3
+    matriz = [[0]*size for _ in range(size)]
+    
+    print("Digite os valores da matriz 3x3:")
+    for i in range(size):
+        for j in range(size):
+            matriz[i][j] = int(input(f"Elemento [{i}][{j}]: "))
+    
+    soma = 0
+    for i in range(size):
+        for j in range(i + 1, size):
+            soma += matriz[i][j]
+    
+    print(f"\nA soma dos elementos acima da diagonal principal é: {soma}")
+
+exercicio8()
+___________________________________________________________________________________________________
+# Exercício 9:
+def exercicio9():
+    size = 3
+    matriz = [[0]*size for _ in range(size)]
+    
+    print("Digite os valores da matriz 3x3:")
+    for i in range(size):
+        for j in range(size):
+            matriz[i][j] = int(input(f"Elemento [{i}][{j}]: "))
+    
+    soma = 0
+    for i in range(1, size):
+        for j in range(i):
+            soma += matriz[i][j]
+    
+    print(f"\nA soma dos elementos abaixo da diagonal principal é: {soma}")
+
+exercicio9()
+___________________________________________________________________________________________________
+# Exercício 10:
+def exercicio10():
+    size = 3
+    matriz = [[0]*size for _ in range(size)]
+    
+    print("Digite os valores da matriz 3x3:")
+    for i in range(size):
+        for j in range(size):
+            matriz[i][j] = int(input(f"Elemento [{i}][{j}]: "))
+    
+    soma = 0
+    for i in range(size):
+        soma += matriz[i][i]
+    
+    print(f"\nA soma dos elementos na diagonal principal é: {soma}")
+
+exercicio10()
+___________________________________________________________________________________________________
+# Exercício 11:
+def exercicio11():
+    size = 3
+    matriz = [[0]*size for _ in range(size)]
+    
+    print("Digite os valores da matriz 3x3:")
+    for i in range(size):
+        for j in range(size):
+            matriz[i][j] = int(input(f"Elemento [{i}][{j}]: "))
+    
+    soma = 0
+    for i in range(size):
+        soma += matriz[i][size - 1 - i]
+    
+    print("\nMatriz inserida:")
+    for linha in matriz:
+        print('\t'.join(map(str, linha)))
+    
+    print(f"\nA soma dos elementos da diagonal secundária é: {soma}")
+
+exercicio11()
+___________________________________________________________________________________________________
